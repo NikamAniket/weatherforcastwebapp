@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherNow – Real-Time Weather</title>
+  <meta name="description" content="Check real-time weather for any city worldwide. Beautiful dark-mode weather app powered by OpenWeatherMap." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <main class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-icon">🌐</span>
+        <span class="logo-text">WeatherNow</span>
+      </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input
+          id="city-input"
+          type="text"
+          class="search-input"
+          placeholder="Search for a city…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="search-btn" class="search-btn" aria-label="Search">
+          <span>Go</span>
+        </button>
+      </div>
+      <p id="error-msg" class="error-msg hidden">City not found. Please try again.</p>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <p>Fetching weather…</p>
+    </div>
+
+    <!-- Weather Card -->
+    <section id="weather-card" class="weather-card hidden">
+
+      <!-- City & Date -->
+      <div class="card-top">
+        <div class="city-info">
+          <h1 id="city-name" class="city-name"></h1>
+          <p id="country" class="country"></p>
+          <p id="date-time" class="date-time"></p>
+        </div>
+        <div class="weather-icon-wrap">
+          <div id="weather-icon" class="weather-icon">⛅</div>
+          <p id="condition" class="condition"></p>
+        </div>
+      </div>
+
+      <!-- Temperature -->
+      <div class="temp-section">
+        <span id="temperature" class="temperature"></span>
+        <div class="unit-toggle">
+          <button id="btn-c" class="unit-btn active" data-unit="C">°C</button>
+          <button id="btn-f" class="unit-btn" data-unit="F">°F</button>
+        </div>
+      </div>
+
+      <!-- Feels Like -->
+      <p id="feels-like" class="feels-like"></p>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card" id="humidity-card">
+          <span class="stat-icon">💧</span>
+          <span id="humidity" class="stat-value"></span>
+          <span class="stat-label">Humidity</span>
+        </div>
+        <div class="stat-card" id="wind-card">
+          <span class="stat-icon">💨</span>
+          <span id="wind" class="stat-value"></span>
+          <span class="stat-label">Wind</span>
+        </div>
+        <div class="stat-card" id="visibility-card">
+          <span class="stat-icon">👁️</span>
+          <span id="visibility" class="stat-value"></span>
+          <span class="stat-label">Visibility</span>
+        </div>
+        <div class="stat-card" id="pressure-card">
+          <span class="stat-icon">📊</span>
+          <span id="pressure" class="stat-value"></span>
+          <span class="stat-label">Pressure</span>
+        </div>
+      </div>
+
+      <!-- Sunrise / Sunset -->
+      <div class="sun-row">
+        <div class="sun-item">
+          <span class="sun-icon">🌅</span>
+          <div>
+            <p class="sun-label">Sunrise</p>
+            <p id="sunrise" class="sun-time"></p>
+          </div>
+        </div>
+        <div class="sun-item">
+          <span class="sun-icon">🌇</span>
+          <div>
+            <p class="sun-label">Sunset</p>
+            <p id="sunset" class="sun-time"></p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Default Prompt -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon">🌤️</div>
+      <p class="empty-title">Check the weather anywhere</p>
+      <p class="empty-sub">Type a city name above to get started</p>
+    </div>
+
+    <footer class="app-footer">
+      Powered by <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeatherMap</a>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
