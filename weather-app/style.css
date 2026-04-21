@@ -174,9 +174,9 @@ body {
   border-radius: var(--radius-sm);
   color: #fff;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   font-family: var(--font);
-  padding: 0.45rem 1.1rem;
+  padding: 0.45rem 0.45rem;
   cursor: pointer;
   transition: opacity var(--transition), transform var(--transition);
 }
