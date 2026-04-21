@@ -24,8 +24,8 @@ jobs:
         run: |
           aws s3 sync ./weather-app s3://weatherforcastwebapp --delete
 
-      - name: 🔄 Invalidate CloudFront Cache
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id E1XT2B64AVPD8K \
-            --paths "/*"
+      # - name: 🔄 Invalidate CloudFront Cache
+      #   run: |
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id E1XT2B64AVPD8K \
+      #       --paths "/*"
