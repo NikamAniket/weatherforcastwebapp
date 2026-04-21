@@ -465,7 +465,7 @@ body {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
- @media (max-width: 420px) {
+ /* @media (max-width: 420px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -475,4 +475,28 @@ body {
     padding: 0.5rem 0.5rem;
     font-size: 0.5rem;
   } 
- }
+ } */
+
+@media (max-width: 420px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .temperature { font-size: 3.5rem; }
+  .city-name   { font-size: 1.2rem; }
+
+  .search-wrapper {
+    padding: 0.5rem 0.6rem;
+    gap: 0.4rem;
+  }
+
+  .search-input {
+    font-size: 0.85rem;
+  }
+
+  .search-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.75rem;
+  }
+}
+
